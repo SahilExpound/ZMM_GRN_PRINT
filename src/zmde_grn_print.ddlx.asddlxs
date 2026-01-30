@@ -1,0 +1,37 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{
+    typeName: 'Material Document List',
+    typeNamePlural: 'Material Document List',
+    title:{ type: #STANDARD, value: 'MaterialDocument' } }
+annotate entity ZC_GRN_PRINT
+    with 
+{
+   @UI.facet: [{ id : 'MaterialDocument',
+  purpose: #STANDARD,
+  type: #IDENTIFICATION_REFERENCE,
+  label: 'Material Document List',
+   position: 10 }]
+
+  @UI.lineItem:       [{ position: 10, label: 'Material Document' },{ type: #FOR_ACTION , dataAction: 'ZPRINT', label: 'Generate Print'}]
+  @UI.identification: [{ position: 10, label: 'Material Document' }]
+  @UI.selectionField: [{ position: 10 }]
+  MaterialDocument;
+  
+    @UI.lineItem:       [{ position: 20, label: 'Material Document Year' }]
+  @UI.identification: [{ position: 20, label: 'Material Document Year' }]
+  @UI.selectionField: [{ position: 20 }]
+  MaterialDocumentYear;
+  
+    @UI.lineItem:       [{ position: 30, label: 'Storage Location' }]
+  @UI.identification: [{ position: 30, label: 'Storage Location' }]
+  @UI.selectionField: [{ position: 30 }]
+  StorageLocation;
+  
+    @UI.lineItem:       [{ position: 40, label: 'Posting Date' }]
+  @UI.identification: [{ position: 40, label: 'Posting Date' }]
+  @UI.selectionField: [{ position: 40 }]
+  PostingDate;
+  
+  
+    
+}

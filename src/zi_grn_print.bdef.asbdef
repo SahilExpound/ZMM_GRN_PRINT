@@ -1,0 +1,21 @@
+managed implementation in class zbp_i_grn_print unique;
+strict ( 2 );
+
+define behavior for ZI_GRN_PRINT alias zi_grn_doc //alias <alias_name>
+//persistent table <???>
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+ // create ( authorization : global );
+  update;
+ // delete;
+ action ( features : instance ) ZPRINT result [1] $self;
+  field ( readonly ) MaterialDocument, MaterialDocumentYear;
+
+  mapping for zdb_grn_print {
+  PostingDate = postingdate;
+  StorageLocation = storagelocation;
+  }
+}
